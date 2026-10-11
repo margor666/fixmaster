@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>לוח ניהול | FixMaster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Подключаем вынесенные стили -->
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="header">
+    <h1>ניהול פניות (לידים)</h1>
+    <button onclick="loadLeads()" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-family: inherit;">רענן ↻</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="setFilter('all')" id="tab-all">הכל <span class="badge" id="badge-all">0</span></button>
+    <button class="tab-btn" onclick="setFilter('new')" id="tab-new">חדשים <span class="badge" id="badge-new">0</span></button>
+    <button class="tab-btn" onclick="setFilter('in_progress')" id="tab-in_progress">בטיפול <span class="badge" id="badge-in_progress">0</span></button>
+    <button class="tab-btn" onclick="setFilter('done')" id="tab-done">הושלמו <span class="badge" id="badge-done">0</span></button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>תאריך</th>
+          <th>שם</th>
+          <th>טלפון</th>
+          <th>שירות</th>
+          <th>סטטוס</th>
+          <th>פעולות</th>
+        </tr>
+      </thead>
+      <tbody id="leadsBody">
+        <tr><td colspan="6" style="text-align: center;">טוען נתונים...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

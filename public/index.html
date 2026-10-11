@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixMaster | שירותי הנדימן מקצועיים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Предполагаем, что SASS скомпилируется сюда: -->
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <main class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>תיקונים מהירים לבית ולעסק</h1>
+                <p>חשמלאי, אינסטלטור או שיפוצניק? אנחנו נדאג להכל במקצועיות ובמהירות.</p>
+            </div>
+            
+            <div class="form-card">
+                <h2>השאר פרטים ונחזור אליך מיד</h2>
+                <form id="leadForm">
+                    <div class="input-group">
+                        <label for="name">שם מלא *</label>
+                        <input type="text" id="name" required placeholder="ישראל ישראלי">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">טלפון נייד *</label>
+                        <input type="tel" id="phone" required placeholder="054-1234567" pattern="^05\d-?\d{7}$" title="מספר טלפון חוקי בישראל">
+                    </div>
+                    <div class="input-group">
+                        <label for="service">במה נוכל לעזור?</label>
+                        <select id="service">
+                            <option value="תקלת חשמל">תקלת חשמל</option>
+                            <option value="אינסטלציה">אינסטלציה ופיצוצי צנרת</option>
+                            <option value="שיפוץ כללי">שיפוץ כללי</option>
+                            <option value="אחר">אחר</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn-primary">הזמן שירות עכשיו</button>
+                    <p id="formStatus" class="status-msg"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>
