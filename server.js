@@ -29,13 +29,14 @@ app.use(xss()); // Удаляет вредоносные скрипты и HTML-
 
 // --- ОГРАНИЧЕНИЕ ЗАПРОСОВ (RATE LIMIT) ---
 const leadFormLimiter = rateLimit({
-    windowMs: 60 * 60 * 1000, // 1 час (в миллисекундах)
-    max: 3, // Максимум 3 заявки с одного IP в течение часа
-    message: { 
-        error: 'נשלחו יותר מדי פניות מכתובת זו. אנא נסה שוב בעוד שעה.' 
-    },
-    standardHeaders: true, 
-    legacyHeaders: false, 
+    windowMs: 60 * 60 * 1000, 
+    max: 3, 
+    // Вместо message используем handler для жесткого возврата JSON
+    handler: (req, res) => {
+        res.status(429).json({ 
+            error: 'נשלחו יותר מדי פניות מכתובת זו. אנא נסה שוב בעוד שעה.' 
+        });
+    }
 });
 
 // Применяем лимит ТОЛЬКО к маршруту отправки заявок
