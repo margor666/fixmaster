@@ -7,7 +7,7 @@ const connectDB = require('./config/db.js');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 // const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
+// const xss = require('xss-clean');
 
 // Подключаем базу данных
 connectDB();
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // --- ЗАЩИТА ДАННЫХ (ОЧИСТКА) ---
 // app.use(mongoSanitize()); // Удаляет запрещенные символы (вроде $) для защиты от NoSQL-инъекций
-app.use(xss()); // Удаляет вредоносные скрипты и HTML-теги из запросов
+// app.use(xss()); // Удаляет вредоносные скрипты и HTML-теги из запросов
 
 // --- ОГРАНИЧЕНИЕ ЗАПРОСОВ (RATE LIMIT) ---
 const leadFormLimiter = rateLimit({
