@@ -4,44 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FixMaster | שירותי הנדימן מקצועיים</title>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Предполагаем, что SASS скомпилируется сюда: -->
+    <!-- Подключаем шрифты Heebo и иконки FontAwesome для галочек и звезд -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
+
+    <!-- Шапка сайта -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-house-chimney-crack"></i></span>
+                <div class="logo-text">
+                    <span class="brand-name">FixMaster</span>
+                    <span class="brand-sub">פיקסמאסטר</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">עלינו</a>
+                <a href="#services">שירותים</a>
+                <a href="tel:0541234567" class="btn-call"><i class="fa-solid fa-phone"></i> 054-1234567</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Первый экран (Hero-секция) -->
     <main class="hero-section">
         <div class="container">
+            
+            <!-- Левая часть (Текст и преимущества) -->
             <div class="hero-content">
-                <h1>תיקונים מהירים לבית ולעסק</h1>
-                <p>חשמלאי, אינסטלטור או שיפוצניק? אנחנו נדאג להכל במקצועיות ובמהירות.</p>
+                <span class="hero-badge">הנדימן מוסמך באזור שלך</span>
+                <h1>תיקונים מהירים<br>לבית ולעסק</h1>
+                <p class="hero-subtext">חשמלאי, אינסטלטור או שיפוצניק? אנחנו נדאג להכל במקצועיות, מהירות ואחריות מלאה.</p>
+                
+                <!-- Иконки преимуществ -->
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span>מקצועיות ללא פשרות</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span>מענה מהיר ותיקון בו ביום</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span>אחריות מלאה על העבודה</span>
+                    </div>
+                </div>
             </div>
             
+            <!-- Правая часть (Форма) -->
             <div class="form-card">
-                <h2>השאר פרטים ונחזור אליך מיד</h2>
+                <h2>השאר פרטים נחזור אליך מיד</h2>
                 <form id="leadForm">
                     <div class="input-group">
                         <label for="name">שם מלא *</label>
-                        <input type="text" id="name" required placeholder="ישראל ישראלי">
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="name" required placeholder="ישראל ישראלי">
+                        </div>
                     </div>
+                    
                     <div class="input-group">
                         <label for="phone">טלפון נייד *</label>
-                        <input type="tel" id="phone" required placeholder="054-1234567" pattern="^05\d-?\d{7}$" title="מספר טלפון חוקי בישראל">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone-flip"></i>
+                            <input type="tel" id="phone" required placeholder="054-1234567" pattern="^05\d-?\d{7}$">
+                        </div>
                     </div>
+                    
                     <div class="input-group">
                         <label for="service">במה נוכל לעזור?</label>
-                        <select id="service">
-                            <option value="תקלת חשמל">תקלת חשמל</option>
-                            <option value="אינסטלציה">אינסטלציה ופיצוצי צנרת</option>
-                            <option value="שיפוץ כללי">שיפוץ כללי</option>
-                            <option value="אחר">אחר</option>
-                        </select>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <select id="service">
+                                <option value="תקלת חשמל">תקלת חשמל</option>
+                                <option value="אינסטלציה">אינסטלציה ופיצוצי צנרת</option>
+                                <option value="שיפוץ כללי">שיפוץ כללי</option>
+                                <option value="אחר">אחר</option>
+                            </select>
+                        </div>
                     </div>
+                    <div class="input-group" id="otherServiceGroup" style="display: none; margin-top: 15px;">
+    <div class="input-wrapper">
+        <i class="fa-solid fa-pen"></i>
+        <input type="text" id="otherService" placeholder="פרט בקצרה מה הבעיה...">
+    </div>
+</div>
                     <button type="submit" id="submitBtn" class="btn-primary">הזמן שירות עכשיו</button>
                     <p id="formStatus" class="status-msg"></p>
                 </form>
+
+                <!-- Блок социального доверия -->
+                <div class="trust-badge">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>הנדימן מומלץ בארץ ★ 5</span>
+                </div>
             </div>
+
         </div>
     </main>
+<!-- Секция "Как мы работаем" -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2 class="section-title">איך זה עובד?</h2>
+            
+            <div class="process-grid">
+                <!-- Шаг 1 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>משאירים פרטים</h3>
+                    <p>ממלאים את הטופס הקצר או מחייגים אלינו ישירות כדי לספר על התקלה.</p>
+                </div>
+                
+                <!-- Шаг 2 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>מקבלים הצעת מחיר</h3>
+                    <p>אנו חוזרים אליכם מיד עם ייעוץ ראשוני והערכת מחיר הוגנת ושקופה.</p>
+                </div>
+                
+                <!-- Шаг 3 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>הבעיה נפתרת!</h3>
+                    <p>איש מקצוע מגיע אליכם בזמן שנקבע ומתקן את התקלה במקצועיות ובאחריות.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Секция "Наши услуги" -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">השירותים שלנו</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-plug"></i>
+                    <h3>עבודות חשמל</h3>
+                    <p>החלפת שקעים, התקנת גופי תאורה, איתור קצרים ותיקון לוחות חשמל באחריות מלאה.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-faucet-drip"></i>
+                    <h3>אינסטלציה</h3>
+                    <p>פתיחת סתימות, תיקון נזילות, החלפת ברזים והתקנת כלים סניטריים לחדר הרחצה והמטבח.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-hammer"></i>
+                    <h3>תיקונים כלליים</h3>
+                    <p>תליית טלוויזיות, וילונות ומדפים, תיקוני צבע קטנים ותחזוקה שוטפת לבית ולמשרד.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-couch"></i>
+                    <h3>הרכבת רהיטים</h3>
+                    <p>פירוק והרכבת רהיטי איקאה, ארונות, מיטות ופינות אוכל במהירות וללא שריטות.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "О нас" -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">קצת עלינו</h2>
+                <p>אנו ב-FixMaster מספקים שירותי תחזוקה, תיקונים ושיפוצים ברמה הגבוהה ביותר. אנו מבינים שהזמן שלכם יקר, ולכן מתחייבים להגעה בזמן, עבודה נקייה ומחירים הוגנים ושקופים מראש. כל עבודה מתבצעת על ידי איש מקצוע מוסמך.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">10+</span>
+                        <span class="stat-text">שנות ניסיון</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-text">אחריות לעבודה</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-text">זמינות טלפונית</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Декоративный блок-заглушка. Позже сюда можно вставить реальное фото команды -->
+            <div class="about-image">
+                <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+        </div>
+    </section>
+    <!-- Футер -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 FixMaster. כל הזכויות שמורות.</p>
+            <p>נבנה ע"י <a href="https://github.com/margor666" target="_blank">Roman Chertkov</a> | פיתוח אתרים ומערכות CRM</p>
+        </div>
+    </footer>
     <script src="/js/main.js"></script>
 </body>
 </html>
