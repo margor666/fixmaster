@@ -18,7 +18,9 @@ app.set('trust proxy', 1);
 
 // --- БАЗОВЫЕ MIDDLEWARE ---
 app.use(cors());
-app.use(helmet()); // Добавляет безопасные HTTP-заголовки
+app.use(helmet({
+    contentSecurityPolicy: false, // Отключаем жесткую блокировку сторонних и встроенных скриптов (onclick, UserWay, FontAwesome)
+}));
 app.use(express.static('public'));
 app.use(express.json()); // Парсит JSON (ОБЯЗАТЕЛЬНО ДОЛЖНО СТОЯТЬ ДО ОЧИСТКИ)
 app.use(express.urlencoded({ extended: false }));
