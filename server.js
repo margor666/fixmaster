@@ -6,7 +6,7 @@ const connectDB = require('./config/db.js');
 // 1. Импортируем пакеты безопасности
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
-const mongoSanitize = require('express-mongo-sanitize');
+// const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
 // Подключаем базу данных
@@ -24,7 +24,7 @@ app.use(express.json()); // Парсит JSON (ОБЯЗАТЕЛЬНО ДОЛЖН
 app.use(express.urlencoded({ extended: false }));
 
 // --- ЗАЩИТА ДАННЫХ (ОЧИСТКА) ---
-app.use(mongoSanitize()); // Удаляет запрещенные символы (вроде $) для защиты от NoSQL-инъекций
+// app.use(mongoSanitize()); // Удаляет запрещенные символы (вроде $) для защиты от NoSQL-инъекций
 app.use(xss()); // Удаляет вредоносные скрипты и HTML-теги из запросов
 
 // --- ОГРАНИЧЕНИЕ ЗАПРОСОВ (RATE LIMIT) ---
