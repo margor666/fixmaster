@@ -524,6 +524,25 @@ html {
     font-size: 5rem;
     box-shadow: 0 15px 30px rgba(26, 54, 93, 0.2);
 }
+/* --- Стили для служебных страниц (Privacy, Terms, Accessibility) --- */
+.legal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid #E2E8F0;
+    min-height: 60vh;
+}
+.legal-content h1 { color: var(--primary); margin-bottom: 20px; font-size: 2rem; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block; }
+.legal-content h2 { color: var(--primary); margin: 25px 0 10px; font-size: 1.4rem; }
+.legal-content p, .legal-content li { margin-bottom: 15px; color: var(--text-main); line-height: 1.8; }
+.legal-content ul { margin-right: 20px; }
+.back-link { display: block; margin-bottom: 20px; color: var(--text-muted); text-decoration: none; font-weight: 600; }
+.back-link:hover { color: var(--accent); }
+
+
 
 /* Адаптив */
 @media (max-width: 768px) {

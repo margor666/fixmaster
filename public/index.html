@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <!-- Подключаем шрифты Heebo и иконки FontAwesome для галочек и звезд -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
     <!-- Шапка сайта -->
@@ -32,13 +34,14 @@
     <!-- Первый экран (Hero-секция) -->
     <main class="hero-section">
         <div class="container">
-            
+
             <!-- Левая часть (Текст и преимущества) -->
             <div class="hero-content">
                 <span class="hero-badge">הנדימן מוסמך באזור שלך</span>
                 <h1>תיקונים מהירים<br>לבית ולעסק</h1>
-                <p class="hero-subtext">חשמלאי, אינסטלטור או שיפוצניק? אנחנו נדאג להכל במקצועיות, מהירות ואחריות מלאה.</p>
-                
+                <p class="hero-subtext">חשמלאי, אינסטלטור או שיפוצניק? אנחנו נדאג להכל במקצועיות, מהירות ואחריות מלאה.
+                </p>
+
                 <!-- Иконки преимуществ -->
                 <div class="benefits-grid">
                     <div class="benefit-item">
@@ -55,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Правая часть (Форма) -->
             <div class="form-card">
                 <h2>השאר פרטים נחזור אליך מיד</h2>
@@ -67,7 +70,7 @@
                             <input type="text" id="name" required placeholder="ישראל ישראלי">
                         </div>
                     </div>
-                    
+
                     <div class="input-group">
                         <label for="phone">טלפון נייד *</label>
                         <div class="input-wrapper">
@@ -75,7 +78,7 @@
                             <input type="tel" id="phone" required placeholder="054-1234567" pattern="^05\d-?\d{7}$">
                         </div>
                     </div>
-                    
+
                     <div class="input-group">
                         <label for="service">במה נוכל לעזור?</label>
                         <div class="input-wrapper">
@@ -89,11 +92,21 @@
                         </div>
                     </div>
                     <div class="input-group" id="otherServiceGroup" style="display: none; margin-top: 15px;">
-    <div class="input-wrapper">
-        <i class="fa-solid fa-pen"></i>
-        <input type="text" id="otherService" placeholder="פרט בקצרה מה הבעיה...">
-    </div>
-</div>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-pen"></i>
+                            <input type="text" id="otherService" placeholder="פרט בקצרה מה הבעיה...">
+                        </div>
+                    </div>
+                    <div class="input-group checkbox-group"
+                        style="display: flex; align-items: start; gap: 10px; margin-top: 20px;">
+                        <input type="checkbox" id="marketingAccept"
+                            style="width: 20px; height: 20px; margin-top: 3px; cursor: pointer;">
+                        <label for="marketingAccept"
+                            style="font-size: 0.85rem; font-weight: normal; color: var(--text-muted); cursor: pointer;">
+                            אני מסכים/ה לקבל דברי דואר ו/או הודעות SMS הכוללים תוכן שיווקי והצעות מחיר (ניתן להסיר את
+                            עצמך בכל עת).
+                        </label>
+                    </div>
                     <button type="submit" id="submitBtn" class="btn-primary">הזמן שירות עכשיו</button>
                     <p id="formStatus" class="status-msg"></p>
                 </form>
@@ -113,11 +126,11 @@
 
         </div>
     </main>
-<!-- Секция "Как мы работаем" -->
+    <!-- Секция "Как мы работаем" -->
     <section id="process" class="process-section">
         <div class="container">
             <h2 class="section-title">איך זה עובד?</h2>
-            
+
             <div class="process-grid">
                 <!-- Шаг 1 -->
                 <div class="process-step">
@@ -128,7 +141,7 @@
                     <h3>משאירים פרטים</h3>
                     <p>ממלאים את הטופס הקצר או מחייגים אלינו ישירות כדי לספר על התקלה.</p>
                 </div>
-                
+
                 <!-- Шаг 2 -->
                 <div class="process-step">
                     <div class="step-icon">
@@ -138,7 +151,7 @@
                     <h3>מקבלים הצעת מחיר</h3>
                     <p>אנו חוזרים אליכם מיד עם ייעוץ ראשוני והערכת מחיר הוגנת ושקופה.</p>
                 </div>
-                
+
                 <!-- Шаг 3 -->
                 <div class="process-step">
                     <div class="step-icon">
@@ -185,7 +198,9 @@
         <div class="container">
             <div class="about-content">
                 <h2 class="section-title">קצת עלינו</h2>
-                <p>אנו ב-FixMaster מספקים שירותי תחזוקה, תיקונים ושיפוצים ברמה הגבוהה ביותר. אנו מבינים שהזמן שלכם יקר, ולכן מתחייבים להגעה בזמן, עבודה נקייה ומחירים הוגנים ושקופים מראש. כל עבודה מתבצעת על ידי איש מקצוע מוסמך.</p>
+                <p>אנו ב-FixMaster מספקים שירותי תחזוקה, תיקונים ושיפוצים ברמה הגבוהה ביותר. אנו מבינים שהזמן שלכם יקר,
+                    ולכן מתחייבים להגעה בזמן, עבודה נקייה ומחירים הוגנים ושקופים מראש. כל עבודה מתבצעת על ידי איש מקצוע
+                    מוסמך.</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-num">10+</span>
@@ -210,10 +225,23 @@
     <!-- Футер -->
     <footer class="main-footer">
         <div class="container">
+            <div class="legal-links" style="margin-bottom: 15px;">
+                <a href="/privacy.html"
+                    style="color: #CBD5E1; text-decoration: none; font-size: 0.9rem; margin: 0 10px;">מדיניות פרטיות</a>
+                |
+                <a href="/accessibility.html"
+                    style="color: #CBD5E1; text-decoration: none; font-size: 0.9rem; margin: 0 10px;">הצהרת נגישות</a> |
+                <a href="/terms.html"
+                    style="color: #CBD5E1; text-decoration: none; font-size: 0.9rem; margin: 0 10px;">תקנון האתר</a>
+            </div>
             <p>&copy; 2026 FixMaster. כל הזכויות שמורות.</p>
-            <p>נבנה ע"י <a href="https://github.com/margor666" target="_blank">Roman Chertkov</a> | פיתוח אתרים ומערכות CRM</p>
+            <p>נבנה ע"י <a href="https://github.com/твоя-ссылка" target="_blank" style="color: var(--accent);">Roman
+                    Chertkov</a></p>
         </div>
     </footer>
     <script src="/js/main.js"></script>
+<!-- Виджет доступности (Бесплатный базовый скрипт) -->
+<script src="https://cdn.userway.org/widget.js" data-account="H0g4o3m2tA"></script>
 </body>
+
 </html>
